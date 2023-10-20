@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/widgets-screens/column.dart';
+import 'package:widgets/widgets-screens/text.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -17,6 +18,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Container(
+        margin: EdgeInsets.all(12),
         child: Column(
           children: [
             ElevatedButton(
@@ -41,7 +43,10 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   )),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TextPage()));
+              },
               child: Text("Text"),
             )
           ],
