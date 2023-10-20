@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/widgets-screens/Row.dart';
 import 'package:widgets/widgets-screens/column.dart';
 import 'package:widgets/widgets-screens/text.dart';
 
@@ -18,11 +19,14 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.all(12),
+        margin: EdgeInsets.all(50),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
               style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
                 padding: EdgeInsets.all(20),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -32,13 +36,21 @@ class HomePage extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ColumnPage()));
               },
-              child: Text("Column"),
+              child: const Text(
+                "Column",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "StyleScript",
+                  fontSize: 24,
+                ),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
                   padding: EdgeInsets.all(20),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -47,8 +59,38 @@ class HomePage extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => TextPage()));
               },
-              child: Text("Text"),
-            )
+              child: const Text(
+                "Text",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "StyleScript",
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  padding: EdgeInsets.all(20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  )),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RowPage()));
+              },
+              child: const Text(
+                "Row",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "StyleScript",
+                  fontSize: 24,
+                ),
+              ),
+            ),
           ],
         ),
       ),
