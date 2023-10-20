@@ -32,16 +32,16 @@ class HomePage extends StatelessWidget {
               },
               child: Text("Column"),
             ),
+            SizedBox(
+              height: 12,
+            ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(20),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                )
-              ),
-              onPressed: () {
-
-              },
+                  padding: EdgeInsets.all(20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  )),
+              onPressed: () {},
               child: Text("Text"),
             )
           ],
