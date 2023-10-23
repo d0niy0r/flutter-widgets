@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/widgets-screens/Row.dart';
 import 'package:widgets/widgets-screens/buttons.dart';
+import 'package:widgets/widgets-screens/card.dart';
 import 'package:widgets/widgets-screens/column.dart';
+import 'package:widgets/widgets-screens/form.dart';
 import 'package:widgets/widgets-screens/images.dart';
+import 'package:widgets/widgets-screens/stack.dart';
 import 'package:widgets/widgets-screens/text.dart';
+import 'package:widgets/widgets-screens/text_field.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -161,7 +165,7 @@ class HomePage extends StatelessWidget {
                           fontSize: 20, fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ImagesPage()));
+                        MaterialPageRoute(builder: (context) => StackPage()));
                   },
                   child: const Text(
                     "Stack",
@@ -186,7 +190,7 @@ class HomePage extends StatelessWidget {
                           fontSize: 20, fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ImagesPage()));
+                        MaterialPageRoute(builder: (context) => CardPage()));
                   },
                   child: const Text(
                     "Card",
@@ -197,6 +201,57 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.yellowAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => TextFieldPage()));
+                  },
+                  child: const Text(
+                    "Text Field",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.white54,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => FormPage()));
+                  },
+                  child: const Text(
+                    "Form",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),
