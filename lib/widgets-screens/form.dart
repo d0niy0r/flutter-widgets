@@ -13,7 +13,9 @@ class _FormPageState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Form"),
+      ),
       body: Container(
         margin: EdgeInsets.all(24),
         child: Form(
