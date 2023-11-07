@@ -57,11 +57,11 @@ class StackPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Card(
-                margin: EdgeInsets.all(24),
+                margin: const EdgeInsets.all(24),
                 child: Stack(
                   children: [
                     Image.asset(

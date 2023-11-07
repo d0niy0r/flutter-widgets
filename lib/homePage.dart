@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/widgets-screens/Row.dart';
+import 'package:widgets/widgets-screens/alert_dialog.dart';
 import 'package:widgets/widgets-screens/buttons.dart';
 import 'package:widgets/widgets-screens/card.dart';
 import 'package:widgets/widgets-screens/column.dart';
 import 'package:widgets/widgets-screens/form.dart';
+import 'package:widgets/widgets-screens/gridView.dart';
 import 'package:widgets/widgets-screens/images.dart';
+import 'package:widgets/widgets-screens/ListView/contacs.dart';
+import 'package:widgets/widgets-screens/progressbar.dart';
+import 'package:widgets/widgets-screens/snackbar.dart';
 import 'package:widgets/widgets-screens/stack.dart';
+import 'package:widgets/widgets-screens/tabbar.dart';
 import 'package:widgets/widgets-screens/text.dart';
 import 'package:widgets/widgets-screens/text_field.dart';
 
@@ -214,8 +220,10 @@ class HomePage extends StatelessWidget {
                       textStyle: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold)),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TextFieldPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TextFieldPage()));
                   },
                   child: const Text(
                     "Text Field",
@@ -251,7 +259,173 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.cyanAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AlertDialogPage()));
+                  },
+                  child: const Text(
+                    "Alert Dialog",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.redAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProgressBarPage()));
+                  },
+                  child: const Text(
+                    "Progressbar",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.lightGreenAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SnackBarPage()));
+                  },
+                  child: const Text(
+                    "Snack Bar",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.black26,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => TabbarPage()));
+                  },
+                  child: const Text(
+                    "Tabbar",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.pinkAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Contacts(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "ListView",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.tealAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => GridViewPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "GridView",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
               ],
             ),
           ),

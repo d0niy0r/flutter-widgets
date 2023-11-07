@@ -63,24 +63,88 @@ class OutlinedCardExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        elevation: 1,
         shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: Theme.of(context).colorScheme.outline,
-          ),
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
+          borderRadius: BorderRadius.circular(24),
         ),
-        child: const SizedBox(
-          width: 300,
-          height: 100,
-          child: Center(
-            child: Text('Card'),
+        margin: const EdgeInsets.all(20),
+        color: Colors.white,
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+          height: 210,
+          width: 350,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const CircleAvatar(
+                    radius: 54,
+                    backgroundImage: NetworkImage(
+                        'https://webstockreview.net/images/male-clipart-professional-man-3.jpg'),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        width: 150,
+                        color: Colors.black54,
+                      ),
+                      const SizedBox(height: 4),
+                      const Text('+998930824736'),
+                      const Text('Uzbekistan'),
+                      const Text('Namangan'),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Islomjonov",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        "Doniyor",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 32),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Mobile App Developer',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text('Android, IOS'),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
-
-
-
