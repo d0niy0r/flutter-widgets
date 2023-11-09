@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/widgets-screens/GridView/gridView.dart';
+import 'package:widgets/widgets-screens/GridView/gridView_2.dart';
+import 'package:widgets/widgets-screens/ListView/contacs.dart';
 import 'package:widgets/widgets-screens/Row.dart';
 import 'package:widgets/widgets-screens/alert_dialog.dart';
 import 'package:widgets/widgets-screens/buttons.dart';
 import 'package:widgets/widgets-screens/card.dart';
 import 'package:widgets/widgets-screens/column.dart';
+import 'package:widgets/widgets-screens/drawer.dart';
 import 'package:widgets/widgets-screens/form.dart';
-import 'package:widgets/widgets-screens/gridView.dart';
 import 'package:widgets/widgets-screens/images.dart';
-import 'package:widgets/widgets-screens/ListView/contacs.dart';
 import 'package:widgets/widgets-screens/progressbar.dart';
 import 'package:widgets/widgets-screens/snackbar.dart';
 import 'package:widgets/widgets-screens/stack.dart';
@@ -371,6 +373,35 @@ class HomePage extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(20),
+                      backgroundColor: Colors.deepOrange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DrawerPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Drawer Widget",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "StyleScript",
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(20),
                       backgroundColor: Colors.pinkAccent,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -410,7 +441,7 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => GridViewPage(),
+                        builder: (context) => GridView2Page(),
                       ),
                     );
                   },
