@@ -22,54 +22,57 @@ class GridView2Page extends StatelessWidget {
           bottomRight: Radius.circular(24),
         )),
       ),
-      body: StaggeredGrid.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 2,
-        crossAxisSpacing: 2,
-        children: [
-          StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
-            child: Tile(
-              index: 1,
-              foodsList: foodsList,
-            ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: StaggeredGrid.count(
+            crossAxisCount: 2,
+            mainAxisSpacing: 2,
+            crossAxisSpacing: 2,
+            children: [
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1.15,
+                child: Tile(
+                  index: 1,
+                  foodsList: foodsList,
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1.15,
+                child: Tile(
+                  index: 2,
+                  foodsList: foodsList,
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1.15,
+                child: Tile(
+                  index: 3,
+                  foodsList: foodsList,
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1.15,
+                child: Tile(
+                  index: 4,
+                  foodsList: foodsList,
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2.15,
+                child: Tile(
+                  index: 5,
+                  foodsList: foodsList,
+                ),
+              ),
+            ],
           ),
-          StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
-            child: Tile(
-              index: 2,
-              foodsList: foodsList,
-            ),
-          ),
-          StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
-            child: Tile(
-              index: 3,
-              foodsList: foodsList,
-            ),
-          ),
-          StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
-            child: Tile(
-              index: 4,
-              foodsList: foodsList,
-            ),
-          ),
-          StaggeredGridTile.count(
-            crossAxisCellCount: 2,
-            mainAxisCellCount: 2,
-            child: Tile(
-              index: 5,
-              foodsList: foodsList,
-              // imageUrl: foodsList[index].imageUrl,
-              // cost: foodsList[index].cost,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -81,73 +84,70 @@ class Tile extends StatelessWidget {
     required this.index,
     this.foodsList,
     this.extent,
-    this.backgroundColor,
     this.bottomSpace,
-    this.imageUrl,
-    this.cost,
   }) : super(key: key);
 
   final int index;
   final List? foodsList;
   final double? extent;
   final double? bottomSpace;
-  final Color? backgroundColor;
-  final String? imageUrl;
-  final String? cost;
 
   @override
   Widget build(BuildContext context) {
-    final child = Container(
-      // color: backgroundColor,
-      height: extent,
+    final child = GridTile(
+      footer: GridTileBar(
+        trailing: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.shopping_bag_outlined,
+            color: Colors.black,
+          ),
+        ),
+        title: Text(
+          "${foodsList![index - 1].cost} so'm",
+          style: const TextStyle(
+            color: Colors.red,
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            fontFamily: "Agbalumo"
+          ),
+        ),
+      ),
       child: Card(
-        clipBehavior: Clip.hardEdge,
-        color: Colors.grey,
+        clipBehavior: Clip.antiAlias,
+        color: Colors.white,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12),
+            Radius.circular(24),
           ),
         ),
         elevation: 4,
-        child: Stack(
+        child: Column(
           children: [
             Container(
-              // height: 0,
+              clipBehavior: Clip.none,
               width: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.yellow,
                 // borderRadius: BorderRadius.circular(24),
               ),
               child: Text(
-                textAlign: TextAlign.center,
-                foodsList![index - 1].name != null
-                    ? "${foodsList![index - 1].name}"
-                    : "",
+                foodsList![index - 1].name,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 24,
-                  fontFamily: "Agbaluma",
+                  fontSize: 18,
+                  fontFamily: "Agbalumo",
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             Image.asset(
               foodsList![index - 1].imageUrl,
               fit: BoxFit.cover,
-
             ),
           ],
         ),
       ),
-
-      // Center(
-      //   child: CircleAvatar(
-      //     minRadius: 20,
-      //     maxRadius: 20,
-      //     backgroundColor: Colors.white,
-      //     foregroundColor: Colors.black,
-      //     child: Text('$index', style: const TextStyle(fontSize: 20)),
-      //   ),
-      // ),
     );
     if (bottomSpace == null) {
       return child;
